@@ -9,8 +9,13 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
+        use: [{
+          loader: 'ts-loader',
+          options: {
+            configFile: 'tsconfig.react.json',
+          }
+        }],
+        exclude: /node_modules/,
       },
       {
         test: /\.png$/,
