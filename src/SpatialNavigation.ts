@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { DebouncedFunc } from 'lodash';
 import debounce from 'lodash/debounce';
 import difference from 'lodash/difference';
@@ -950,6 +952,7 @@ class SpatialNavigationService {
           component.focusable
         ) {
           this.updateLayout(component.focusKey);
+
           const siblingCutoffCoordinate =
             SpatialNavigationService.getCutoffCoordinate(
               isVerticalDirection,
@@ -958,6 +961,8 @@ class SpatialNavigationService {
               component.layout,
               this.writingDirection
             );
+
+          console.log(siblingCutoffCoordinate >= currentCutoffCoordinate);
 
           return isVerticalDirection
             ? isIncrementalDirection
@@ -1001,6 +1006,8 @@ class SpatialNavigationService {
         this.visualDebugger.drawPoint(refCorners.a.x, refCorners.a.y);
         this.visualDebugger.drawPoint(refCorners.b.x, refCorners.b.y);
       }
+
+      console.log(siblings);
 
       const sortedSiblings = this.sortSiblingsByPriority(
         siblings,

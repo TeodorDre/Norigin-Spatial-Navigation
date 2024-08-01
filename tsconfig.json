@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
     "declaration": false,
     "esModuleInterop": true,
@@ -38,12 +38,18 @@
       "vite/client"
     ],
     "useUnknownInCatchVariables": false,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
   "include": [
     "*.ts",
     "*.tsx",
     "*.vue",
-    "app"
+    "src",
+    "shims.d.ts"
   ],
   "exclude": [
     "node_modules"

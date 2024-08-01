@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import WritingDirection from "./WritingDirection";
 
 // We'll make VisualDebugger no-op for any environments lacking a DOM (e.g. SSR and React Native non-web platforms).

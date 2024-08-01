@@ -4,10 +4,16 @@ import {
   defineConfig
 } from 'vite';
 
+const srcDir = path.resolve(__dirname, 'src');
 const appDir = path.resolve(__dirname, 'src', 'vue');
 
 export default defineConfig({
   root: appDir,
+  resolve: {
+    alias: {
+      '@': srcDir,
+    },
+  },
   build: {
     outDir: './dist',
     ssr: false,

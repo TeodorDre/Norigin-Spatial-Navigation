@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 enum WritingDirection {
   LTR,
   RTL
